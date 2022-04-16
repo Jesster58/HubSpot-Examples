@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<style>
+	/* example */
+.example {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+	/* hide default box */
+.example input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+	/* new custom box */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #EDE6DB;
+}
+	/* mouse over */
+.example:hover input ~ .checkmark {
+  background-color: #417D7A;
+}
+	/* when checked */
+.example input:checked ~ .checkmark {
+  background-color: #1D5C63;
+}
+	/* indicator */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+	/* on click action */
+.example input:checked ~ .checkmark:after {
+  display: block;
+}
+ 	/* indicator */
+.example .checkmark:after {
+  left: 8px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #EDE6DB;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+</style>
+
+<h1> What is your favorite food? </h1>
+
+<label for = "pizza_checkbox" class="example"> Pizza
+<input type = "checkbox" id = "pizza_checkbox" name = "pizza_checkbox" value = "pizza" class = "example">  
+<span class="checkmark"></span>
+</label>
+<br>
+
+<label for = "gyro_checkbox" class="example"> Gyro
+<input type = "checkbox" id = "gyro_checkbox" name = "gyro_checkbox" value = "gyro" class = "example">  
+<span class="checkmark"></span>
+</label>
+<br>
+
+<label for = "icecream_checkbox" class="example"> Ice Cream
+<input type = "checkbox" id = "icecream_checkbox" name = "icecream_checkbox" value = "icecream" class = "example">  
+<span class="checkmark"></span>
+</label>
+<br>
+
+</body>
+</html>
